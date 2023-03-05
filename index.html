@@ -11,7 +11,7 @@
 				flex-wrap: wrap;
 				justify-content: space-between;
 			}
-			.num_box{
+			.num-box{
 				position: relative;
 				width: 23%;
 				height: 150px;
@@ -20,7 +20,7 @@
 				line-height: 150px;
 				margin-bottom: 30px;
 			}
-			.num_box::after{
+			.num-box::after{
 				content: "";
 				position: absolute;
 				left: 0;
@@ -29,7 +29,7 @@
 				bottom: 0;
 				background-color: brown;
 			}
-			.num_box::after{
+			.num-box::after{
 				content: "";
 				position: absolute;
 				left: 0;
@@ -38,15 +38,16 @@
 				bottom: 0;
 				background-color: aqua;
 			}
-			.num_box.activeBox::after{
+			.num-box.activeBox::after{
 				background-color: transparent;
 			}
-			.num_box.successbox{
-				background-color: yellowgreen;
+			.num-box.successbox{
+				background-color:green;
 				color:white;
 			}
-			.successbox::after{
-				background-color: yellow;
+			.num-box.successbox::after{
+				background-color:transparent;
+			
 			}
 			.body{
 				text-align: center;
@@ -83,11 +84,11 @@
 			
 			uniqueNumber.forEach(function(elem,index){
 				var numBox=document.createElement("div");
-				numBox.setAttribute("class","num_box");
+				numBox.setAttribute("class","num-box");
 				numBox.setAttribute("data-target",elem);
 				numBox.innerHTML=elem;
 				box.appendChild(numBox);
-				var element=document.getElementsByClassName("num_box");
+				var element=document.getElementsByClassName("num-box");
 				for (let i=0; i<element.length;i++){
 					element[i].addEventListener("click", findNumbers);
 				}
@@ -98,7 +99,8 @@
 			let _id=event.target.dataset.target;
 			console.log(_id);
 			if(_id==para.innerText){
-				event.target.classList.add("successBox");
+				
+				event.target.classList.add("successbox");
 			}
 			else{
 				alert("Please find again");
